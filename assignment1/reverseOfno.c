@@ -1,16 +1,24 @@
 #include <stdio.h>
- int reverseNo(int n, int rev){
-    if(n==0){ return rev;}
-
-    return reverseNo(n/10, rev*10 + n%10);
- }
- int main()
- {
-    int n;
-    printf("enter a number: ");
+int main()
+{
+    int n,temp,count=-1,ldigit,sum=0;
+    printf("enter a no: ");
     scanf("%d",&n);
+    temp=n;
+    while(temp>0){
+        temp=temp/10;
+        count ++;}
 
-    printf("reverse of the number is %d\n",reverseNo(n,0));
-    if(reverseNo(n,0)==n){printf("the number is a palindrome\n");}
-    return 0;
- }
+        temp=n;
+        while(temp>0){
+            ldigit=temp%10;
+            for(int i=1;i<=count;i++){
+                ldigit=ldigit*10;}
+            sum=sum+ldigit;
+            temp=temp/10;
+            count=count-1;
+        }      
+        printf("reverse of the number is %d",sum);
+        return 0;
+
+}
