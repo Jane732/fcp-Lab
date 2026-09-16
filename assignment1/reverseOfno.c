@@ -10,6 +10,7 @@
     printf("enter a number: ");
     scanf("%d",&n);
 
-    printf("reverse of the number is %d",reverseNo(n,0));
+    printf("reverse of the number is %d\n",reverseNo(n,0));
+    if(reverseNo(n,0)==n){printf("the number is a palindrome\n");}
     return 0;
  }
